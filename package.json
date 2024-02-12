@@ -1,0 +1,56 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server/server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stock-Venture/api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stock-Venture/api/issues"
+  },
+  "homepage": "https://github.com/Stock-Venture/api#readme",
+  "dependencies": {
+    "@joi/date": "^2.1.0",
+    "@sendgrid/mail": "^7.6.0",
+    "async": "^3.2.0",
+    "athena-express": "^7.1.0",
+    "aws-sdk": "^2.972.0",
+    "axios": "^0.21.4",
+    "bcrypt": "^5.0.1",
+    "bluebird": "^3.5.1",
+    "bunyan": "^1.8.15",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^8.6.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-simple": "^0.5.6",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.11.15",
+    "mongoose-auto-increment": "^5.0.1",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^2.6.1",
+    "otp-generator": "^4.0.0",
+    "paytmchecksum": "^1.5.0",
+    "redis": "^3.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "jest": "^27.0.3",
+    "loadtest": "^5.1.2",
+    "mocha": "^9.1.1",
+    "nodemon": "^2.0.8",
+    "supertest": "^6.1.3"
+  }
+}
