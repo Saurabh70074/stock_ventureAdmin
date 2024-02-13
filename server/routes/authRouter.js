@@ -120,6 +120,7 @@ router.post("/loginwithotp", [logInWithOtp], async (req, res) => {
 });
 
 router.post("/register", [register], async (req, res) => {
+  console.log('hello world');
   let { name, email, role, phoneNumber, password, profession, city } = req.body;
   try {
     let user = await authControls.getUserByEmailOrPhoneNumber(
