@@ -6,7 +6,7 @@ function connectDb() {
     useUnifiedTopology: true,
     useCreateIndex: true,
   };
-  mongoose.set("debug", true);
+  mongoose.set("debug", false);
   mongoose
     .connect(process.env.MONGO_CONNECTION_STRING, mongoOptions)
     .then(() => {
