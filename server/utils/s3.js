@@ -32,8 +32,7 @@ const deleteObject = (key) => {
 const putObject = (mime, buffer, key) => {
   return new Promise((resolve, reject) => {
     s3.putObject(
-      {
-        ACL: "public-read", // https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html
+      {// https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html
         Bucket: process.env.S3BUCKETNAME,
         Key: key,
         Body: buffer,
