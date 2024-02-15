@@ -7,8 +7,8 @@ const responseHandler = require("../utils/responseHandler");
 const customExceptions = require("../responseModels/customExceptions");
 const { USER_ROLE, STATUS } = require("../constants/dbConstants");
 
-//#region Content  [auth.authenticateToken, auth.checkSiteManager]
-router.post("/admin/add", async (req, res) => {
+//#region Content 
+router.post("/admin/add", [auth.authenticateToken, auth.checkSiteManager], async (req, res) => {
   let { contenttype, contentAdmin, status } = req.body;
 
   console.log('hello data',contenttype, contentAdmin, status )
