@@ -13,7 +13,7 @@ router.post("/admin/add", async (req, res) => {
 
   console.log('hello data',contenttype, contentAdmin, status )
   try {
-    let createdBy = req.claims.user._id;
+    // let createdBy = req.claims.user._id;
     let response = await contentControls.addContent({
       contenttype,
       contentAdmin,
