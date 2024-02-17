@@ -25,7 +25,7 @@ router.post(
       blogId,
     } = req.body;
     try {
-      // let authorId = req.claims.user._id;
+      let authorId = req.claims.user._id;
       let response = await blogControls.addBlogAdmin({
         type,
         title,
@@ -34,7 +34,7 @@ router.post(
         tags,
         content,
         status,
-        // authorId,
+        authorId,
         blogId,
       });
       response = await blogControls.getBlogAdminById(response._id);
