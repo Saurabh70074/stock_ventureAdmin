@@ -9,9 +9,10 @@ const customExceptions = require("../responseModels/customExceptions");
 const { STATUS } = require("../constants/dbConstants");
 
 //#region Blog
+
+// [auth.authenticateToken, auth.checkSiteManager, addBlog]
 router.post(
   "/admin/add",
-  [auth.authenticateToken, auth.checkSiteManager, addBlog],
   async (req, res) => {
     let {
       type,
