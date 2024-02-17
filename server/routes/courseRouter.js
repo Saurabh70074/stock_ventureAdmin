@@ -20,7 +20,8 @@ const PaytmChecksum = require("paytmchecksum");
 let merchantKey = "688qGGj4#0yTcFuq";
 
 //#region Course
-router.post("/admin/add", [auth.authenticateToken, auth.checkInstructor], async (req, res) => {
+// [auth.authenticateToken, auth.checkInstructor]
+router.post("/admin/add", async (req, res) => {
   let {
     name,
     media,
