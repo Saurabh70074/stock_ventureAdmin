@@ -43,7 +43,7 @@ router.post("/admin/add", async (req, res) => {
     courseId,
   } = req.body;
   try {
-    let createdBy = req.claims.user._id;
+    // let createdBy = req.claims.user._id;
     let response = await courseControls.addCourseAdmin({
       name,
       media,
@@ -58,7 +58,7 @@ router.post("/admin/add", async (req, res) => {
       tags,
       status,
       coursetype,
-      createdBy,
+      // createdBy,
       basePrice,
       totalPrice,
       batch,
