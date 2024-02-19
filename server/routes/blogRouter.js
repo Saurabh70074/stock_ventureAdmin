@@ -74,6 +74,7 @@ router.put(
 );
 
 router.get("/getbyId/:id", async (req, res) => {
+  console.log('hello data1');
   let { id } = req.params;
 
   try {
@@ -85,6 +86,7 @@ router.get("/getbyId/:id", async (req, res) => {
 });
 
 router.get("/getbyName/:name", async (req, res) => {
+  console.log('hello data2');
   let { name } = req.params;
 
   try {
@@ -100,6 +102,7 @@ router.get(
   [auth.authenticateToken, auth.checkSiteManager],
   async (req, res) => {
     let { id } = req.params;
+    console.log('hello data3');
 
     try {
       let response = await blogControls.getBlogAdminById(id);

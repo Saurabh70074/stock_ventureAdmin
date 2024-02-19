@@ -21,7 +21,7 @@ router.post("/uploadmedia", async (req, res) => {
         fs.createReadStream(data.path),
         s3Key
       );
-      let s3Url = `https://${process.env.S3BUCKETNAME}.s3.ap-south-1.amazonaws.com/${s3Key}`;
+      let s3Url = `https://stgbuck.s3.ap-south-1.amazonaws.com/${s3Key}`;
       response[i] = s3Url
     }
 

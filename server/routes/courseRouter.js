@@ -66,6 +66,7 @@ router.post("/admin/add",[auth.authenticateToken, auth.checkInstructor], async (
       courseId,
     });
     response = await courseControls.getCourseAdminById(response._id);
+    console.log('hello data');
     return responseHandler.sendSuccess(res, response, req);
   } catch (error) {
     return responseHandler.sendError(res, error, req);
@@ -145,7 +146,8 @@ router.get("/getbyName/:name", async (req, res) => {
   }
 });
 
-router.get("/admin/getbyId/:id", [auth.authenticateToken, auth.checkInstructor], async (req, res) => {
+router.get("/admin/getbyId/:id", async (req, res) => {
+  console.log('request', req)
   let { id } = req.params;
 
   try {
