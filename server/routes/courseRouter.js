@@ -21,7 +21,7 @@ let merchantKey = "688qGGj4#0yTcFuq";
 
 //#region Course
 // [auth.authenticateToken, auth.checkInstructor]
-router.post("/admin/add", async (req, res) => {
+router.post("/admin/add",[auth.authenticateToken, auth.checkInstructor], async (req, res) => {
   let {
     name,
     media,
@@ -43,7 +43,7 @@ router.post("/admin/add", async (req, res) => {
     courseId,
   } = req.body;
   try {
-    // let createdBy = req.claims.user._id;
+    let createdBy = req.claims.user?._id;
     let response = await courseControls.addCourseAdmin({
       name,
       media,
@@ -58,7 +58,7 @@ router.post("/admin/add", async (req, res) => {
       tags,
       status,
       coursetype,
-      // createdBy,
+      createdBy,
       basePrice,
       totalPrice,
       batch,
@@ -95,7 +95,7 @@ router.put("/admin/edit/:id", [auth.authenticateToken, auth.checkInstructorORSit
   } = req.body;
   try {
     let coursedetails = await courseControls.getCourseAdminById(id);
-    let createdBy = req.claims.user._id;
+    let createdBy = req.claims.user?._id;
     let response = await courseControls.updateCourseAdmin({
       id,
       name,

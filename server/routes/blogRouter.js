@@ -12,7 +12,7 @@ const { STATUS } = require("../constants/dbConstants");
 
 // [auth.authenticateToken, auth.checkSiteManager, addBlog]
 router.post(
-  "/admin/add",
+  "/admin/add",[auth.authenticateToken, auth.checkSiteManager, addBlog],
   async (req, res) => {
     let {
       type,
@@ -25,7 +25,7 @@ router.post(
       blogId,
     } = req.body;
     try {
-      let authorId = req.claims.user._id;
+      let authorId = req.claims.user?._id;
       let response = await blogControls.addBlogAdmin({
         type,
         title,
